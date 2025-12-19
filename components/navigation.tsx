@@ -25,7 +25,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20 lg:h-24">
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <Logo size="md" />
-            <span className="hidden sm:inline font-bold text-white text-xl lg:text-2xl tracking-tight">
+            <span className="inline font-bold text-white text-base sm:text-xl lg:text-2xl tracking-tight">
               Dynamic Accounting
             </span>
           </Link>

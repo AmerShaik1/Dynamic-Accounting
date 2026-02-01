@@ -7,9 +7,9 @@ import Footer from '@/components/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Dynamic Accounting and Payroll | Certified Tax Advisor | San Diego',
-  description: 'Expert tax preparation, bookkeeping, payroll processing, and financial statements for individuals and small businesses in San Diego, California. 20+ years of trusted service.',
-  keywords: 'tax advisor, certified tax advisor, bookkeeping, payroll processing, tax preparation, San Diego, California',
+  title: 'Dynamic Accounting Services | Certified Tax Advisor | United States',
+  description: 'Expert tax preparation, bookkeeping, payroll processing, and financial statements for individuals and small businesses across the United States. 10+ years of trusted service.',
+  keywords: 'tax advisor, certified tax advisor, bookkeeping, payroll processing, tax preparation, United States',
 };
 
 export default function RootLayout({

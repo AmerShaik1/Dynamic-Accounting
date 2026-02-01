@@ -8,7 +8,7 @@ export default function TrustBadges() {
     },
     {
       icon: Shield,
-      text: '20+ Years Experience'
+      text: '10+ Years Experience'
     },
     {
       icon: CheckCircle,
@@ -16,7 +16,7 @@ export default function TrustBadges() {
     },
     {
       icon: TrendingUp,
-      text: '$5M+ Savings Generated'
+      text: 'Over $2M+ Savings Generated'
     }
   ];
 

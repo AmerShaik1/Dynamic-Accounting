@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabaseClient";
+import { Resend } from "resend";
 
 interface LeadData {
   first_name: string;
@@ -16,6 +17,9 @@ interface LeadData {
   message?: string;
 }
 
+const resend =
+  process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as LeadData;
@@ -25,16 +29,22 @@ export async function POST(request: NextRequest) {
 
     if (!body.first_name?.trim()) errors.push("First name is required");
     if (!body.last_name?.trim()) errors.push("Last name is required");
-    if (!body.email?.trim() || !isValidEmail(body.email)) errors.push("Valid email is required");
+    if (!body.email?.trim() || !isValidEmail(body.email))
+      errors.push("Valid email is required");
     if (!body.phone?.trim()) errors.push("Phone is required");
     if (!body.city?.trim()) errors.push("City is required");
     if (!body.state?.trim()) errors.push("State is required");
     if (!body.service_interest?.trim()) errors.push("Service interest is required");
-    if (!body.preferred_contact_method?.trim()) errors.push("Preferred contact method is required");
-    if (!body.preferred_time_window?.trim()) errors.push("Preferred time window is required");
+    if (!body.preferred_contact_method?.trim())
+      errors.push("Preferred contact method is required");
+    if (!body.preferred_time_window?.trim())
+      errors.push("Preferred time window is required");
 
     if (errors.length > 0) {
-      return NextResponse.json({ error: "Validation failed", details: errors }, { status: 400 });
+      return NextResponse.json(
+        { error: "Validation failed", details: errors },
+        { status: 400 }
+      );
     }
 
     // ✅ Save to Supabase
@@ -54,13 +64,54 @@ export async function POST(request: NextRequest) {
         message: body.message?.trim() || null,
         source: "website",
         status: "new",
-        // created_at is handled by default now() in DB
+        // created_at handled by default now() in DB
       },
     ]);
 
     if (error) {
       console.error("Supabase insert error:", error);
       return NextResponse.json({ error: "Failed to save lead." }, { status: 500 });
+    }
+
+    // ✅ Send notification email via Resend (do not fail the request if email fails)
+    try {
+      const notifyTo = process.env.NOTIFY_EMAIL;
+      const fromEmail = process.env.FROM_EMAIL || "TaxPro360 <onboarding@resend.dev>";
+
+      if (!resend) {
+        console.warn("RESEND_API_KEY is not set. Skipping email notification.");
+      } else if (!notifyTo) {
+        console.warn("NOTIFY_EMAIL is not set. Skipping email notification.");
+      } else {
+        await resend.emails.send({
+          from: fromEmail,
+          to: ["sk@taxpro360.net"],
+          subject: "New consultation request from TaxPro360 website",
+          text: `
+New lead from TaxPro360 website:
+
+Name: ${body.first_name} ${body.last_name}
+Email: ${body.email}
+Phone: ${body.phone}
+
+Business name: ${body.business_name || "-"}
+Business size: ${body.business_size || "-"}
+
+City/State: ${body.city || "-"}, ${body.state || "-"}
+
+Service interest: ${body.service_interest || "-"}
+
+Preferred contact: ${body.preferred_contact_method || "-"}
+Preferred time: ${body.preferred_time_window || "-"}
+
+Message:
+${body.message || "-"}
+          `.trim(),
+        });
+      }
+    } catch (emailError) {
+      console.error("Resend email error:", emailError);
+      // Don't block the user response if email fails
     }
 
     return NextResponse.json(

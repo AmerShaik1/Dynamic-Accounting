@@ -26,7 +26,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <Logo size="md" />
             <span className="inline font-bold text-white text-base sm:text-xl lg:text-2xl tracking-tight">
-              Dynamic Accounting
+              Dynamic Accounting Services
             </span>
           </Link>
 

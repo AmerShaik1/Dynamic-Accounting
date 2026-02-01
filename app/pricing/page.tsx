@@ -176,7 +176,7 @@ export default function PricingPage() {
               { title: 'Timely Delivery', desc: 'Meet all deadlines and ensure compliance with all regulatory requirements' },
               { title: 'Professional Reports', desc: 'Clear, accurate, and professional financial documentation' },
               { title: 'Secure Communication', desc: 'Encrypted and secure client portal for document sharing' },
-              { title: 'Peace of Mind', desc: '20+ years of expertise handling your most important financial matters' },
+              { title: 'Peace of Mind', desc: '10+ years of expertise handling your most important financial matters' },
             ].map((item, idx) => (
               <Card key={idx} className="p-6 bg-slate-50 border border-slate-200">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>

@@ -23,7 +23,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="animate-fade-in-up">
               <div className="inline-block mb-4 px-5 py-2 bg-white/90 backdrop-blur-sm text-slate-800 rounded-full text-sm font-semibold shadow-lg border border-slate-200 hover:scale-105 transition-all duration-300">
-                <span className="text-lime-500">✓</span> Certified Tax Advisor • 20+ Years Experience
+                <span className="text-lime-500">✓</span> Certified Tax Advisor • 10+ Years Experience
               </div>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight animate-float">
@@ -34,7 +34,7 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                Dynamic Accounting and Payroll delivers expert bookkeeping, tax preparation, and strategic financial guidance for individuals and small businesses in San Diego.
+                Dynamic Accounting Services delivers expert bookkeeping, tax preparation, and strategic financial guidance for individuals and small businesses across United States.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -61,7 +61,7 @@ export default function Home() {
                 </div>
                 <div className="text-center group hover:scale-105 transition-all duration-300">
                   <div className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-lime-500 bg-clip-text text-transparent">
-                    <AnimatedCounter end={20} suffix="+" />
+                    <AnimatedCounter end={10} suffix="+" />
                   </div>
                   <p className="text-slate-600 text-xs font-medium mt-1">Years in Business</p>
                 </div>
@@ -78,7 +78,6 @@ export default function Home() {
                 <TrustBadges />
               </div>
             </div>
-
             {/* Enhanced Right Side Card */}
             <div className="hidden lg:block animate-fade-in-up animation-delay-200">
               <div className="relative group">
@@ -95,17 +94,23 @@ export default function Home() {
                       <div className="p-2 bg-white rounded-lg shadow-md group-hover/item:shadow-lg transition-all duration-300">
                         <FileText className="text-lime-500 group-hover/item:scale-110 transition-transform duration-300" size={24} />
                       </div>
-                      <span className="font-semibold text-slate-900 text-base">Expert Preparation</span>
+                      <span className="font-semibold text-slate-900 text-base">Precise Bookkeeping</span>
                     </div>
                     <div className="group/item flex items-center gap-3 p-3 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl hover:shadow-xl transition-all duration-500 hover:scale-105 border border-slate-200/50">
                       <div className="p-2 bg-white rounded-lg shadow-md group-hover/item:shadow-lg transition-all duration-300">
                         <Calculator className="text-slate-800 group-hover/item:scale-110 transition-transform duration-300" size={24} />
                       </div>
-                      <span className="font-semibold text-slate-900 text-base">Precise Bookkeeping</span>
+                      <span className="font-semibold text-slate-900 text-base">Expert Accounting Services</span>
                     </div>
                     <div className="group/item flex items-center gap-3 p-3 bg-gradient-to-br from-lime-50 to-lime-100 rounded-xl hover:shadow-xl transition-all duration-500 hover:scale-105 border border-lime-200/50">
                       <div className="p-2 bg-white rounded-lg shadow-md group-hover/item:shadow-lg transition-all duration-300">
-                        <TrendingUp className="text-lime-500 group-hover/item:scale-110 transition-transform duration-300" size={24} />
+                        <DollarSign className="text-lime-500 group-hover/item:scale-110 transition-transform duration-300" size={24} />
+                      </div>
+                      <span className="font-semibold text-slate-900 text-base"> Reliable Payroll Services</span>
+                    </div>
+                    <div className="group/item flex items-center gap-3 p-3 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl hover:shadow-xl transition-all duration-500 hover:scale-105 border border-slate-200/50">
+                      <div className="p-2 bg-white rounded-lg shadow-md group-hover/item:shadow-lg transition-all duration-300">
+                        <TrendingUp className="text-slate-800 group-hover/item:scale-110 transition-transform duration-300" size={24} />
                       </div>
                       <span className="font-semibold text-slate-900 text-base">Business Growth Support</span>
                     </div>
@@ -117,11 +122,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Logos / Trust Indicator Section */}
+      {/* Client Logos / Trust Indicator Section
       <section className="py-12 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-slate-600 font-medium text-base mb-6">
-            Trusted by 500+ San Diego businesses and individuals
+            Trusted by 500+ businesses and individuals
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 opacity-60">
             {['Industry Leader', 'Top Rated 2024', 'Certified Excellence', 'Award Winner', '5-Star Service'].map((badge, idx) => (
@@ -131,7 +136,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Premium Service Cards with Glassmorphism */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
@@ -347,7 +352,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                quote: "Dynamic Accounting transformed how we handle our finances. Their proactive tax strategies saved us thousands annually.",
+                quote: "Dynamic Accounting Services transformed how we handle our finances. Their proactive tax strategies saved us thousands annually.",
                 author: "Sarah Chen",
                 role: "Small Business Owner"
               },
@@ -357,7 +362,7 @@ export default function Home() {
                 role: "Self-Employed Consultant"
               },
               {
-                quote: "Finally, a CPA who explains things clearly and actually cares about maximizing our returns.",
+                quote: "Finally, a CTA who explains things clearly and actually cares about maximizing our returns.",
                 author: "Jennifer Park",
                 role: "Tech Startup Founder"
               },

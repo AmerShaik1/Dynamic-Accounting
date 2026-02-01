@@ -10,15 +10,15 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Logo size="sm" />
-              <h3 className="font-bold text-lg">Dynamic Accounting</h3>
+              <h3 className="font-bold text-lg">Dynamic Accounting Services</h3>
             </div>
-            <p className="text-slate-400 text-sm">20+ years of trusted tax and accounting services for individuals and small businesses.</p>
+            <p className="text-slate-400 text-sm">10+ years of trusted tax and accounting services for individuals and small businesses.</p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4 text-lime-400">Services</h4>
             <ul className="space-y-2 text-slate-400 text-sm">
-              <li><Link href="/services#bookkeeping" className="hover:text-lime-400 transition-colors">Bookkeeping</Link></li>
+              <li><Link href="/services#bookkeeping" className="hover:text-lime-400 transition-colors">Business</Link></li>
               <li><Link href="/services#statements" className="hover:text-lime-400 transition-colors">Financial Statements</Link></li>
               <li><Link href="/services#payroll" className="hover:text-lime-400 transition-colors">Payroll Processing</Link></li>
               <li><Link href="/services#tax-prep" className="hover:text-lime-400 transition-colors">Tax Preparation</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2024 Dynamic Accounting and Payroll. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2026 Dynamic Accounting and Payroll. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0 text-slate-400 text-sm">
               <Link href="#" className="hover:text-lime-400 transition-colors">Privacy Policy</Link>
               <Link href="#" className="hover:text-lime-400 transition-colors">Terms of Service</Link>

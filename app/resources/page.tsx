@@ -44,7 +44,7 @@ export default function ResourcesPage() {
     },
     {
       q: 'How much should I charge for tax services?',
-      a: 'Tax service pricing varies based on complexity, type of entity, and industry. We recommend consulting with a professional like Dynamic Accounting to determine appropriate pricing.'
+      a: 'Tax service pricing varies based on complexity, type of entity, and industry. We recommend consulting with a professional like Dynamic Accounting Services to determine appropriate pricing.'
     },
     {
       q: 'What deductions am I missing?',

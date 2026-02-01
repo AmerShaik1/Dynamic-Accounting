@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
     // ✅ Send notification email via Resend (do not fail the request if email fails)
     try {
       const notifyTo = process.env.NOTIFY_EMAIL;
-      const fromEmail = process.env.FROM_EMAIL || "TaxPro360 <onboarding@resend.dev>";
+      const fromEmail = process.env.FROM_EMAIL || "TaxPro360 <noreply@taxpro360.net>";
 
       if (!resend) {
         console.warn("RESEND_API_KEY is not set. Skipping email notification.");

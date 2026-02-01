@@ -27,6 +27,9 @@ export default function ContactPage() {
   const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    // If the user starts typing again, hide the success message
+    if (success) setSuccess(false);
+    
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -50,6 +53,11 @@ export default function ContactPage() {
       }
 
       setSuccess(true);
+      
+      // 1. AUTO-SCROLL to the top of the page so the user sees the thank you message
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Reset form data
       setFormData({
         first_name: '',
         last_name: '',
@@ -65,7 +73,8 @@ export default function ContactPage() {
         message: '',
       });
 
-      setTimeout(() => setSuccess(false), 5000);
+      // 2. PERSISTENT SUCCESS: Notice setTimeout is removed. 
+      // The message stays until user interacts with the form again.
     } catch (err) {
       setError('Failed to submit form. Please try again.');
     } finally {
@@ -144,8 +153,8 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <Card className="p-8">
                 {success && (
-                  <div className="mb-6 p-4 bg-lime-50 border border-lime-200 rounded-lg">
-                    <p className="text-lime-800 font-semibold">Thank you! We'll be in touch shortly.</p>
+                  <div className="mb-6 p-4 bg-lime-50 border border-lime-200 rounded-lg animate-in fade-in slide-in-from-top duration-500">
+                    <p className="text-lime-800 font-semibold text-lg">Thank you! We&apos;ll be in touch shortly.</p>
                   </div>
                 )}
 

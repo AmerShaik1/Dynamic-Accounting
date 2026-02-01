@@ -3,6 +3,8 @@ import { Phone, Mail, Globe } from 'lucide-react';
 import Logo from '@/components/logo';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +14,9 @@ export default function Footer() {
               <Logo size="sm" />
               <h3 className="font-bold text-lg">Dynamic Accounting Services</h3>
             </div>
-            <p className="text-slate-400 text-sm">10+ years of trusted tax and accounting services for individuals and small businesses.</p>
+            <p className="text-slate-400 text-sm">
+              10+ years of trusted tax and accounting services for individuals and small businesses.
+            </p>
           </div>
 
           <div>
@@ -41,15 +45,26 @@ export default function Footer() {
             <ul className="space-y-3 text-slate-400 text-sm">
               <li className="flex gap-2">
                 <Phone size={16} className="text-lime-400 flex-shrink-0 mt-1" />
-                <a href="tel:+18586883763" className="hover:text-lime-400 transition-colors">+1 (858) 688-3763</a>
+                <a href="tel:+18586883763" className="hover:text-lime-400 transition-colors">
+                  +1 (858) 688-3763
+                </a>
               </li>
               <li className="flex gap-2">
                 <Mail size={16} className="text-lime-400 flex-shrink-0 mt-1" />
-                <a href="mailto:sk@taxpro360.net" className="hover:text-lime-400 transition-colors">sk@taxpro360.net</a>
+                <a href="mailto:sk@taxpro360.net" className="hover:text-lime-400 transition-colors">
+                  sk@taxpro360.net
+                </a>
               </li>
               <li className="flex gap-2">
                 <Globe size={16} className="text-lime-400 flex-shrink-0 mt-1" />
-                <a href="https://www.taxpro360.net" target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 transition-colors">www.taxpro360.net</a>
+                <a
+                  href="https://www.taxpro360.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-lime-400 transition-colors"
+                >
+                  www.taxpro360.net
+                </a>
               </li>
             </ul>
           </div>
@@ -57,7 +72,10 @@ export default function Footer() {
 
         <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-400 text-sm">© 2026 Dynamic Accounting and Payroll. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">
+              © {currentYear} Dynamic Accounting and Payroll. All rights reserved.
+            </p>
+
             <div className="flex gap-6 mt-4 md:mt-0 text-slate-400 text-sm">
               <Link href="#" className="hover:text-lime-400 transition-colors">Privacy Policy</Link>
               <Link href="#" className="hover:text-lime-400 transition-colors">Terms of Service</Link>
